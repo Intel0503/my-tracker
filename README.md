@@ -1,11 +1,12 @@
 # My Tracker
 
-An offline task and goal tracker for your Android phone. Your data stays on your phone only.
+An offline task, habit and goal tracker for your Android phone. Your data stays on your phone only.
 
+- **Daily habits**: set up once, log every day. Checkbox (e.g. *Eat protein*) or count with a target (e.g. *Squats 100 reps*, *Brisk walking 30 min*) with a quick-add button. Log or fix past days from the habit's calendar. Pause or archive instead of delete.
 - **Tasks**: add, edit, tick done, due dates, priority, link to a goal, search
-- **Goals**: long-term goals with progress based on their linked tasks
+- **Goals**: long-term goals with linked habits and tasks. Optionally measurable (e.g. weight 88 kg → 75 kg): log your weigh-ins and see a chart, and progress is based on your latest value
 - **No delete**: items are *archived* or *cancelled* instead, and can be restored. Every change is kept in a permanent history log.
-- **Stats**: completed tasks, completion rate, streaks, on-time rate, weekly chart, activity calendar, best day of the week, goal progress
+- **Stats**: habit consistency, perfect days, streaks per habit, completed tasks, completion rate, streaks, on-time rate, weekly chart, activity calendar, best day of the week, goal progress
 - **Backup**: export to a file / share to Google Drive, import back (import only adds or updates, never removes)
 
 ## Files
@@ -39,8 +40,13 @@ The app has to be opened from a web address (https) once so Android can install 
 
 ## Changing the app later
 
-1. Edit the files, then open `sw.js` and change `VERSION = 'v1'` to `'v2'` (and so on each time).
+1. Edit the files, then open `sw.js` and increase the number in `VERSION` (currently `'v2'`, so next is `'v3'`).
 2. Upload the changed files to GitHub again.
 3. Close and reopen the app on your phone (sometimes twice) to get the new version. Your data is not affected.
 
 To try changes on your computer first: install the **Live Server** extension in VS Code, right-click `index.html` → *Open with Live Server*. (Double-clicking the file won't work because browsers block storage for files opened directly.)
+
+## Version history
+
+- **v2**: daily habits (checkbox or count), measurable goals with weigh-in log and chart, habit stats. Upgrading from v1 keeps all your data.
+- **v1**: tasks, goals, stats, backup.

@@ -1,8 +1,8 @@
 /* Service worker: saves a copy of the app's files on the phone,
    so the app opens even with no internet.
-   When you change any file later, increase VERSION (v1 -> v2)
+   When you change any file later, increase VERSION (e.g. v2 -> v3)
    so phones pick up the new copy. Your data is NOT affected. */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const CACHE = `my-tracker-${VERSION}`;
 const FILES = [
   './',

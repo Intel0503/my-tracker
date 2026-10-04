@@ -247,3 +247,71 @@ details.hist summary { font-weight: 700; color: var(--muted); font-size: .85rem;
   max-width: calc(100vw - 32px);
 }
 .toast.show { opacity: 1; transform: translateX(-50%); }
+
+/* =========================================================
+   v2 additions: habits, measurements, calendar
+   ========================================================= */
+.link { border: 0; background: none; color: var(--accent); font-weight: 700; font-size: .78rem; text-transform: none; letter-spacing: 0; padding: 0; }
+.plain { display: block; width: 100%; border: 0; background: none; text-align: left; padding: 0; }
+.goal-progress-row .sub { margin-top: 4px; }
+
+/* Habit rows */
+.row.habit { align-items: center; }
+.row.habit.complete .row-title { color: var(--muted); }
+.check.part { border-color: var(--accent); background: conic-gradient(var(--accent-soft) var(--p), transparent 0); }
+.progress.thin { height: 5px; margin: 6px 0 0; }
+.step-btn {
+  flex: none; border: 1px solid var(--accent); color: var(--accent); background: var(--accent-soft);
+  border-radius: 11px; padding: 8px 12px; font-weight: 750; min-width: 56px;
+}
+.step-btn:active, .check:active { transform: scale(.94); }
+
+/* "Add" chooser */
+.choice-list { display: grid; gap: 10px; margin-top: 4px; }
+.choice { text-align: left; border: 1px solid var(--line); background: var(--bg); border-radius: var(--radius); padding: 14px 16px; }
+.choice b { display: block; font-size: 1.02rem; margin-bottom: 2px; }
+.choice span { color: var(--muted); font-size: .86rem; }
+
+/* Radio buttons that look like the segmented control */
+.seg-radio { flex: 1; position: relative; }
+.seg-radio input { position: absolute; opacity: 0; inset: 0; }
+.seg-radio span { display: block; text-align: center; padding: 8px 6px; border-radius: 9px; font-size: .88rem; font-weight: 600; color: var(--muted); }
+.seg-radio input:checked + span { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+.seg-radio input:focus-visible + span { outline: 2px solid var(--accent); }
+
+/* Habit detail */
+.kpis.mini .kpi { padding: 10px 12px; }
+.kpis.mini .value { font-size: 1.3rem; }
+.cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+.cal-h { text-align: center; font-size: .72rem; color: var(--muted); font-weight: 700; }
+.cal-d {
+  aspect-ratio: 1; border: 0; border-radius: 9px; display: grid; place-items: center;
+  font-size: .82rem; font-weight: 600; background: var(--surface-2); color: var(--muted); padding: 0;
+}
+.cal-d.done { background: var(--accent); color: var(--accent-ink); }
+.cal-d.part { background: var(--heat-1); color: var(--ink); }
+.cal-d.miss { background: var(--warn-soft); color: var(--warn); }
+.cal-d.todo { background: var(--surface); border: 1px dashed var(--muted); color: var(--ink); }
+.cal-d.off { background: transparent; border: 1px solid var(--line); }
+.cal-d.future { background: transparent; opacity: .35; }
+.cal-d.sel { outline: 2.5px solid var(--ink); outline-offset: 1px; }
+.cal-key { width: 11px; height: 11px; border-radius: 3px; display: inline-block; margin-left: 6px; }
+.cal-key.done { background: var(--accent); } .cal-key.part { background: var(--heat-1); }
+.cal-key.miss { background: var(--warn-soft); border: 1px solid var(--warn); } .cal-key.off { border: 1px solid var(--line); }
+.log-card { background: var(--bg); box-shadow: none; }
+.stepper { display: grid; grid-template-columns: auto 1fr auto; gap: 8px; align-items: center; }
+.stepper input { text-align: center; font-size: 1.4rem; font-weight: 750; padding: 8px; border: 1px solid var(--line); border-radius: 11px; background: var(--surface); width: 100%; }
+.stepper .btn { min-width: 64px; }
+
+/* Goal measurement */
+.three-col { display: grid; grid-template-columns: 1fr 1fr .8fr; gap: 10px; }
+.metric-box { border: 1px dashed var(--line); border-radius: var(--radius); padding: 10px 12px 0; margin: 0 0 14px; }
+.metric-box legend { font-size: .8rem; font-weight: 700; color: var(--muted); padding: 0 4px; }
+.metric-head { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 8px; }
+.metric-head .label { font-size: .74rem; color: var(--muted); font-weight: 600; }
+.metric-head .big { font-size: 1.35rem; font-weight: 750; letter-spacing: -.02em; }
+.metric-head small { font-size: .8rem; color: var(--muted); font-weight: 600; }
+.chart .line { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; }
+.chart .dot { fill: var(--accent); }
+.chart .target { stroke: var(--warn); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.chart .target-lbl { fill: var(--warn); font-weight: 700; }
